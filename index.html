@@ -85,7 +85,12 @@
     white-space: nowrap;
   }
   .changelog-chip:hover { border-color: var(--accent); color: var(--text); }
-  .x-link {
+  .top-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .round-link {
     width: 28px;
     height: 28px;
     display: flex;
@@ -95,9 +100,11 @@
     border-radius: 9999px;
     color: var(--muted);
     padding: 0;
+    text-decoration: none;
   }
-  .x-link svg { width: 13px; height: 13px; display: block; fill: currentColor; }
-  .x-link:hover { border-color: var(--accent); color: var(--text); }
+  .round-link svg { width: 13px; height: 13px; display: block; fill: currentColor; }
+  .round-link:hover { border-color: var(--accent); color: var(--text); }
+  .round-link .copy-mark { font-size: 14px; line-height: 1; }
   .theme-toggle {
     position: absolute;
     top: 40px;
@@ -326,10 +333,6 @@
     opacity: 0.9;
   }
   footer a.newell-logo:hover { opacity: 1; }
-  footer .copy {
-    text-align: center;
-    margin-top: 20px;
-  }
   @media (max-width: 640px) {
     h1 { font-size: 48px; }
     .top-right { top: 24px; right: 24px; gap: 14px; }
@@ -344,7 +347,6 @@
     .sec-grid { grid-template-columns: 1fr; }
     footer { padding-bottom: 32px; }
     .newell-logo { height: 32px; }
-    footer .copy { text-align: center; margin-top: 16px; }
   }
 </style>
 </head>
@@ -352,9 +354,15 @@
 <div class="top-right">
   <img src="/interleaf-badge.svg" alt="Interleaf mark" class="corner-mark">
   <a class="changelog-chip" href="/changelog.html">Changelog</a>
-  <a class="x-link" href="https://x.com/interleafdev" aria-label="Interleaf on X" rel="noopener">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-  </a>
+  <div class="top-links">
+    <a class="round-link" href="mailto:info@interleaf.dev" aria-label="Email Interleaf">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    </a>
+    <a class="round-link" href="/license.html" aria-label="Copyright and license"><span class="copy-mark">&copy;</span></a>
+    <a class="round-link" href="https://x.com/interleafdev" aria-label="Interleaf on X" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+  </div>
 </div>
 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light mode">
   <svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -440,9 +448,8 @@
 </div>
 <footer>
   <div class="foot-icons">
-    <img src="/n-logo.png" alt="N" class="newell-logo">
+    <a href="https://jordannewell.com" rel="noopener"><img src="/n-logo.png" alt="N" class="newell-logo"></a>
   </div>
-  <p class="copy">© 2026</p>
 </footer>
 <script>
   document.getElementById("theme-toggle").addEventListener("click", function () {
