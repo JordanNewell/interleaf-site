@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>License — Interleaf</title>
+<meta name="description" content="Interleaf is licensed under the Business Source License 1.1.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+  :root {
+    --bg: #1C1830;
+    --surface: #252042;
+    --text: #E9E5FF;
+    --accent: #A78BFA;
+    --muted: #9A93B8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 96px 32px 128px;
+  }
+  .back {
+    display: inline-block;
+    margin-bottom: 48px;
+    font-size: 14px;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(167, 139, 250, 0.4);
+  }
+  .back:hover { color: var(--accent); }
+  h1 {
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    margin-bottom: 16px;
+  }
+  .lic-name {
+    font-size: 20px;
+    color: var(--accent);
+    margin-bottom: 40px;
+  }
+  .params {
+    border-top: 1px solid rgba(167, 139, 250, 0.25);
+    margin-bottom: 40px;
+  }
+  .param {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(167, 139, 250, 0.25);
+  }
+  .param .k {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 15px;
+    padding-top: 2px;
+  }
+  .param p { color: var(--muted); }
+  .param p b { color: var(--text); font-weight: 600; }
+  .note { color: var(--muted); margin-bottom: 24px; max-width: 640px; }
+  .note strong { color: var(--text); font-weight: 600; }
+  .fulltext a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(167, 139, 250, 0.4); }
+  .fulltext a:hover { color: var(--text); }
+  footer {
+    margin-top: 96px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  footer a { color: var(--muted); text-decoration: none; border-bottom: 1px solid rgba(167, 139, 250, 0.4); }
+  footer a:hover { color: var(--accent); }
+  @media (max-width: 640px) {
+    h1 { font-size: 36px; }
+    .wrap { padding: 64px 24px 96px; }
+    .param { grid-template-columns: 1fr; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="/">&larr; interleaf.dev</a>
+  <h1>License</h1>
+  <p class="lic-name">Business Source License 1.1</p>
+  <div class="params">
+    <div class="param">
+      <span class="k">Licensor</span>
+      <p><b>Jordan Newell</b></p>
+    </div>
+    <div class="param">
+      <span class="k">Licensed Work</span>
+      <p>Interleaf (the Obsidian message-bus plugin and related source)</p>
+    </div>
+    <div class="param">
+      <span class="k">Change Date</span>
+      <p>Four years from the date each version of the Licensed Work is published</p>
+    </div>
+    <div class="param">
+      <span class="k">Change License</span>
+      <p><b>GPL Version 3.0</b> or any later version</p>
+    </div>
+  </div>
+  <p class="note">
+    Interleaf source is available for <strong>non-production use</strong> — read it,
+    hack on it, self-host it for yourself. Production use of the Licensed Work is
+    limited per the Additional Use Grant in the license text.
+  </p>
+  <p class="note">
+    When the Change Date for a given version passes, that version is released under
+    the Change License and becomes free software.
+  </p>
+  <p class="fulltext">
+    <a href="https://mariadb.com/bsl11/" rel="noopener">Read the full license text &rarr;</a>
+  </p>
+  <footer>© 2026 Interleaf.dev</footer>
+</div>
+</body>
+</html>

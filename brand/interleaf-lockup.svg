@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
+  <!-- Horizontal lockup: mark + wordmark + tagline -->
+  <defs>
+    <mask id="gapL" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
+      <rect width="512" height="512" fill="#fff"/>
+      <path d="M140 140 C140 300 372 212 372 372" fill="none" stroke="#000" stroke-width="58" stroke-linecap="round"/>
+    </mask>
+  </defs>
+  <rect width="1200" height="400" fill="#FFFFFF"/>
+  <g transform="translate(70,72) scale(0.5)">
+    <rect width="512" height="512" rx="112" fill="#1C1830"/>
+    <path d="M372 140 C372 300 140 212 140 372" fill="none" stroke="#E9E5FF" stroke-width="36" stroke-linecap="round" mask="url(#gapL)"/>
+    <path d="M140 140 C140 300 372 212 372 372" fill="none" stroke="#A78BFA" stroke-width="36" stroke-linecap="round"/>
+  </g>
+  <text x="380" y="222" font-family="Helvetica, Arial, sans-serif" font-size="128" font-weight="600" fill="#1C1830" letter-spacing="-2">Interleaf</text>
+  <text x="384" y="284" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#6B6480">Sealed mail between Obsidian vaults</text>
+</svg>

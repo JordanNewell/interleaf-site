@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <!-- Interleaf mood board -->
+  <defs>
+    <mask id="gapBoard" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
+      <rect width="512" height="512" fill="#fff"/>
+      <path d="M140 140 C140 300 372 212 372 372" fill="none" stroke="#000" stroke-width="58" stroke-linecap="round"/>
+    </mask>
+    <pattern id="weave" width="48" height="48" patternUnits="userSpaceOnUse">
+      <rect width="48" height="48" fill="#F7F5FB"/>
+      <path d="M0 12 Q12 0 24 12 T48 12" fill="none" stroke="#A78BFA" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+      <path d="M0 36 Q12 24 24 36 T48 36" fill="none" stroke="#1C1830" stroke-width="5" stroke-linecap="round" opacity="0.25"/>
+    </pattern>
+  </defs>
+
+  <!-- Page -->
+  <rect width="1600" height="1000" fill="#F7F5FB"/>
+
+  <!-- Header -->
+  <text x="80" y="100" font-family="Helvetica, Arial, sans-serif" font-size="56" font-weight="600" fill="#1C1830">Interleaf</text>
+  <text x="80" y="140" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#6B6480">Mood board · quiet, precise, private</text>
+
+  <!-- Hero tile: dark, reversed mark -->
+  <rect x="80" y="180" width="680" height="380" rx="24" fill="#1C1830"/>
+  <g transform="translate(292,242) scale(0.5)">
+    <path d="M372 140 C372 300 140 212 140 372" fill="none" stroke="#E9E5FF" stroke-width="36" stroke-linecap="round" mask="url(#gapBoard)"/>
+    <path d="M140 140 C140 300 372 212 372 372" fill="none" stroke="#A78BFA" stroke-width="36" stroke-linecap="round"/>
+  </g>
+
+  <!-- Light tile: mono mark -->
+  <rect x="80" y="590" width="330" height="230" rx="24" fill="#E9E5FF"/>
+  <g transform="translate(168,628) scale(0.3)">
+    <path d="M372 140 C372 300 140 212 140 372" fill="none" stroke="#1C1830" stroke-width="36" stroke-linecap="round" mask="url(#gapBoard)"/>
+    <path d="M140 140 C140 300 372 212 372 372" fill="none" stroke="#1C1830" stroke-width="36" stroke-linecap="round"/>
+  </g>
+
+  <!-- Violet tile: mono mark -->
+  <rect x="430" y="590" width="330" height="230" rx="24" fill="#A78BFA"/>
+  <g transform="translate(518,628) scale(0.3)">
+    <path d="M372 140 C372 300 140 212 140 372" fill="none" stroke="#1C1830" stroke-width="36" stroke-linecap="round" mask="url(#gapBoard)"/>
+    <path d="M140 140 C140 300 372 212 372 372" fill="none" stroke="#1C1830" stroke-width="36" stroke-linecap="round"/>
+  </g>
+
+  <!-- Palette -->
+  <rect x="800" y="180" width="130" height="150" rx="16" fill="#1C1830"/>
+  <rect x="940" y="180" width="130" height="150" rx="16" fill="#A78BFA"/>
+  <rect x="1080" y="180" width="130" height="150" rx="16" fill="#E9E5FF"/>
+  <rect x="1220" y="180" width="130" height="150" rx="16" fill="#6B6480"/>
+  <rect x="1360" y="180" width="130" height="150" rx="16" fill="#FFFFFF" stroke="#E9E5FF" stroke-width="2"/>
+  <g font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#1C1830">
+    <text x="800" y="356" font-weight="600">Vault Ink</text>
+    <text x="800" y="380" fill="#6B6480">#1C1830</text>
+    <text x="940" y="356" font-weight="600">Seal Violet</text>
+    <text x="940" y="380" fill="#6B6480">#A78BFA</text>
+    <text x="1080" y="356" font-weight="600">Paper Lilac</text>
+    <text x="1080" y="380" fill="#6B6480">#E9E5FF</text>
+    <text x="1220" y="356" font-weight="600">Quiet Gray</text>
+    <text x="1220" y="380" fill="#6B6480">#6B6480</text>
+    <text x="1360" y="356" font-weight="600">Page</text>
+    <text x="1360" y="380" fill="#6B6480">#FFFFFF</text>
+  </g>
+
+  <!-- Keywords -->
+  <text x="800" y="436" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#6B6480">Keywords</text>
+  <g font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#1C1830">
+    <rect x="800" y="458" width="170" height="46" rx="23" fill="#FFFFFF" stroke="#E9E5FF" stroke-width="2"/>
+    <text x="885" y="489" text-anchor="middle">Sealed</text>
+    <rect x="990" y="458" width="170" height="46" rx="23" fill="#FFFFFF" stroke="#E9E5FF" stroke-width="2"/>
+    <text x="1075" y="489" text-anchor="middle">Private</text>
+    <rect x="1180" y="458" width="170" height="46" rx="23" fill="#FFFFFF" stroke="#E9E5FF" stroke-width="2"/>
+    <text x="1265" y="489" text-anchor="middle">Precise</text>
+    <rect x="800" y="516" width="170" height="46" rx="23" fill="#FFFFFF" stroke="#E9E5FF" stroke-width="2"/>
+    <text x="885" y="547" text-anchor="middle">Woven</text>
+    <rect x="990" y="516" width="170" height="46" rx="23" fill="#FFFFFF" stroke="#E9E5FF" stroke-width="2"/>
+    <text x="1075" y="547" text-anchor="middle">Quiet</text>
+    <rect x="1180" y="516" width="170" height="46" rx="23" fill="#FFFFFF" stroke="#E9E5FF" stroke-width="2"/>
+    <text x="1265" y="547" text-anchor="middle">Yours</text>
+  </g>
+
+  <!-- Texture tile: interleaved weave pattern -->
+  <rect x="800" y="590" width="330" height="230" rx="24" fill="url(#weave)"/>
+
+  <!-- Typography card -->
+  <rect x="1150" y="590" width="370" height="230" rx="24" fill="#FFFFFF" stroke="#E9E5FF" stroke-width="2"/>
+  <text x="1180" y="725" font-family="Helvetica, Arial, sans-serif" font-size="110" font-weight="600" fill="#1C1830">Aa</text>
+  <text x="1180" y="772" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#1C1830">Display: geometric sans (TBD)</text>
+  <text x="1180" y="798" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#6B6480">Body: system sans</text>
+
+  <!-- Principle -->
+  <text x="80" y="900" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="600" fill="#1C1830">The message is sealed. The vault is yours.</text>
+  <text x="80" y="940" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#6B6480">Quiet, precise, private. Not playful, not corporate, not a crypto dashboard.</text>
+</svg>

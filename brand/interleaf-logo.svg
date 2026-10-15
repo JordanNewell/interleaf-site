@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Interleaf mark: two strands interlaced over/under, sealed in a vault-tile -->
+  <rect width="512" height="512" rx="112" fill="#1C1830"/>
+  <!-- Strand B (under) -->
+  <path d="M372 140 C372 300 140 212 140 372" fill="none" stroke="#E9E5FF" stroke-width="36" stroke-linecap="round"/>
+  <!-- Halo cuts strand B at the crossing -->
+  <path d="M140 140 C140 300 372 212 372 372" fill="none" stroke="#1C1830" stroke-width="58" stroke-linecap="round"/>
+  <!-- Strand A (over) -->
+  <path d="M140 140 C140 300 372 212 372 372" fill="none" stroke="#A78BFA" stroke-width="36" stroke-linecap="round"/>
+</svg>

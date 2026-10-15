@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Multi-color B: Vault Ink over, Seal Violet under. Transparent background. -->
+  <defs>
+    <mask id="gapB" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
+      <rect width="512" height="512" fill="#fff"/>
+      <path d="M140 140 C140 300 372 212 372 372" fill="none" stroke="#000" stroke-width="58" stroke-linecap="round"/>
+    </mask>
+  </defs>
+  <path d="M372 140 C372 300 140 212 140 372" fill="none" stroke="#A78BFA" stroke-width="36" stroke-linecap="round" mask="url(#gapB)"/>
+  <path d="M140 140 C140 300 372 212 372 372" fill="none" stroke="#1C1830" stroke-width="36" stroke-linecap="round"/>
+</svg>

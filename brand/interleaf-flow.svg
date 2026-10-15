@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500">
+  <!-- How a message moves: sender vault -> sealed box -> opaque relay -> sealed box -> recipient vault -->
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6B6480"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="500" fill="#FFFFFF"/>
+  <text x="600" y="70" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="600" fill="#1C1830">A message, end to end</text>
+  <text x="600" y="104" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#6B6480">Only the two vaults ever hold the key</text>
+
+  <!-- Connectors -->
+  <line x1="225" y1="250" x2="258" y2="250" stroke="#6B6480" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="460" y1="250" x2="493" y2="250" stroke="#6B6480" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="695" y1="250" x2="728" y2="250" stroke="#6B6480" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="930" y1="250" x2="963" y2="250" stroke="#6B6480" stroke-width="3" marker-end="url(#arr)"/>
+
+  <!-- Alice vault -->
+  <rect x="30" y="190" width="195" height="120" rx="20" fill="#A78BFA"/>
+  <text x="127" y="240" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="600" fill="#1C1830">Sender vault</text>
+  <text x="127" y="272" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#1C1830">Ed25519 identity</text>
+
+  <!-- Sealed box (outbound) -->
+  <rect x="262" y="190" width="195" height="120" rx="20" fill="#E9E5FF" stroke="#A78BFA" stroke-width="2"/>
+  <text x="359" y="240" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="600" fill="#1C1830">Sealed box</text>
+  <text x="359" y="272" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#1C1830">encrypted to recipient</text>
+
+  <!-- Relay -->
+  <rect x="497" y="190" width="195" height="120" rx="20" fill="#1C1830"/>
+  <text x="594" y="240" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="600" fill="#E9E5FF">Relay</text>
+  <text x="594" y="272" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#A78BFA">stores opaque boxes</text>
+
+  <!-- Sealed box (inbound) -->
+  <rect x="732" y="190" width="195" height="120" rx="20" fill="#E9E5FF" stroke="#A78BFA" stroke-width="2"/>
+  <text x="829" y="240" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="600" fill="#1C1830">Sealed box</text>
+  <text x="829" y="272" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#1C1830">still unreadable</text>
+
+  <!-- Recipient vault -->
+  <rect x="967" y="190" width="195" height="120" rx="20" fill="#A78BFA"/>
+  <text x="1064" y="240" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="600" fill="#1C1830">Recipient vault</text>
+  <text x="1064" y="272" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#1C1830">decrypts locally</text>
+
+  <text x="600" y="400" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#6B6480">The relay sees routing metadata and ciphertext. It never sees the message.</text>
+</svg>
