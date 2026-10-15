@@ -42,6 +42,20 @@
     border-bottom: 1px solid rgba(167, 139, 250, 0.4);
   }
   .back:hover { color: var(--accent); }
+  .x-chip {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    border-radius: 12px;
+  }
+  .x-chip svg { width: 18px; height: 18px; display: block; fill: var(--bg); }
+  .x-chip:hover { background: var(--text); }
   h1 {
     font-size: 48px;
     font-weight: 600;
@@ -87,10 +101,14 @@
     h1 { font-size: 36px; }
     .wrap { padding: 64px 24px 96px; }
     .param { grid-template-columns: 1fr; gap: 4px; }
+    .x-chip { top: 24px; right: 24px; }
   }
 </style>
 </head>
 <body>
+<a class="x-chip" href="https://x.com/interleafdev" aria-label="Interleaf on X" rel="noopener">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+</a>
 <div class="wrap">
   <a class="back" href="/">&larr; interleaf.dev</a>
   <h1>License</h1>
