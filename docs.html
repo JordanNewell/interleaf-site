@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Docs — Interleaf</title>
+<meta name="description" content="Getting started with Interleaf — sealed mail between Obsidian vaults. Install, first run, contacts, cross-vault mail, and the security model.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<script>
+  (function () {
+    var saved = localStorage.getItem("interleaf-theme");
+    if (saved === "light" || (!saved && matchMedia("(prefers-color-scheme: light)").matches)) {
+      document.documentElement.dataset.theme = "light";
+    }
+  })();
+</script>
+<style>
+  :root {
+    --bg: #1C1830;
+    --surface: #252042;
+    --text: #E9E5FF;
+    --accent: #A78BFA;
+    --muted: #9A93B8;
+  }
+  [data-theme="light"] {
+    --bg: #F4F1FB;
+    --surface: #FFFFFF;
+    --text: #211C38;
+    --accent: #6B4EE0;
+    --muted: #5E5779;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 96px 32px 128px;
+  }
+  .back {
+    display: inline-block;
+    margin-bottom: 48px;
+    font-size: 14px;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(167, 139, 250, 0.4);
+  }
+  .back:hover { color: var(--accent); }
+  h1 {
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    margin-bottom: 16px;
+  }
+  .lede { color: var(--muted); margin-bottom: 64px; max-width: 56ch; }
+  .sec { margin-bottom: 72px; }
+  .sec h2 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(167, 139, 250, 0.18);
+  }
+  .sec p { color: var(--muted); margin-bottom: 16px; }
+  .sec p b, .sec li b { color: var(--text); font-weight: 600; }
+  .sec ul { list-style: none; margin-bottom: 16px; }
+  .sec li { color: var(--muted); padding: 6px 0 6px 20px; position: relative; }
+  .sec li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 15px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.55;
+  }
+  code {
+    font-family: "SF Mono", ui-monospace, "Cascadia Mono", Menlo, Consolas, monospace;
+    font-size: 0.85em;
+    color: var(--text);
+    background: var(--surface);
+    padding: 2px 7px;
+    border-radius: 6px;
+  }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(167, 139, 250, 0.4); }
+  a:hover { color: var(--text); }
+  footer {
+    margin-top: 96px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  footer a { color: var(--muted); text-decoration: none; border-bottom: 1px solid rgba(167, 139, 250, 0.4); }
+  footer a:hover { color: var(--accent); }
+  @media (max-width: 640px) {
+    h1 { font-size: 36px; }
+    .wrap { padding: 64px 24px 96px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="/">&larr; interleaf.dev</a>
+  <h1>Docs</h1>
+  <p class="lede">Sealed mail between Obsidian vaults. Everything below lives in one plugin — install it, pick a name, set a passcode, and talk.</p>
+
+  <div class="sec" id="install">
+    <h2>Install</h2>
+    <p>The plugin ships as three files — <code>main.js</code>, <code>manifest.json</code>, <code>styles.css</code> — copied into <code>&lt;vault&gt;/.obsidian/plugins/interleaf/</code> and enabled under <b>Settings → Community plugins</b>. <a href="https://github.com/TfTHacker/obsidian42-brat" rel="noopener">BRAT</a> works too: add the repository and let it manage updates.</p>
+    <p>There is no account and no server to sign up for. Everything starts local.</p>
+  </div>
+
+  <div class="sec" id="first-run">
+    <h2>First run</h2>
+    <p>A welcome modal asks three things:</p>
+    <ul>
+      <li><b>Address</b> — your name on this vault's bus. Slug-like, defaults to <code>owner</code>. Addresses only need to be unique within one vault; each vault is its own bus.</li>
+      <li><b>Display name</b> — optional, what others see in conversation lists.</li>
+      <li><b>Passcode</b> — required. It seals your mail at rest; there's no way past the modal without one.</li>
+    </ul>
+    <p>Everything can be changed later in <b>Settings → Messenger</b> — and changing your address moves your inbox, receipts, and read cursor with you.</p>
+  </div>
+
+  <div class="sec" id="two-ways">
+    <h2>Two ways to talk</h2>
+    <p><b>A shared mail folder.</b> The bus is plain files, so any folder sync carries it: Obsidian Sync (turn off <i>Hide mail storage</i>), iCloud, Dropbox, Syncthing, a shared directory. Two people can share just the <code>Messenger/</code> folder and keep their vaults private.</p>
+    <p><b>Nothing shared at all — cross-vault mail.</b> Point the plugin at a relay and vaults connect by invite code or QR. Both paths land in the same inbox.</p>
+  </div>
+
+  <div class="sec" id="cross-vault">
+    <h2>Cross-vault mail</h2>
+    <p>Two vaults that share nothing — different people, different devices, different continents — can still talk. The transport is a <b>relay</b>: a dumb per-fingerprint mailbox for sealed boxes. Nothing about your vault is shared, and the relay can never read a message.</p>
+    <ul>
+      <li><b>Identity is a keypair, not an account.</b> Enabling cross-vault mail mints an Ed25519 key, sealed under your passcode. Your public fingerprint (<code>fp_…</code>) is your address out there.</li>
+      <li><b>Mail is sealed end to end.</b> Every message is signed with your key and encrypted to the recipient's before it leaves the vault. The relay sees destination fingerprint, size, and timing — stated, not solved.</li>
+      <li><b>First contact is a knock, never a delivery.</b> A stranger's intro is quarantined under <b>Contact requests</b>; accepting completes the handshake both ways. Until invite codes have moved between you, two strangers on different vaults have no path to each other — that's the design, not a gap.</li>
+      <li><b>Connect by invite code</b> (<code>osinv1-…</code>), the QR, or the deep link — shown under <b>Settings → Messenger → Cross-vault mail</b>, pasteable into Add contacts.</li>
+    </ul>
+    <p>After connecting, compare <b>safety numbers</b> out of band — a call or an already-trusted channel. That eyeball check, not the wire, is what proves who you're talking to.</p>
+  </div>
+
+  <div class="sec" id="everyday">
+    <h2>Everyday</h2>
+    <ul>
+      <li><b>Open chat</b> — the chat view, also on the ribbon</li>
+      <li><b>Open chat in new window</b> — the messenger as a detached desktop window</li>
+      <li><b>Send message</b> — compose to any address, with an address picker</li>
+      <li><b>Add contacts</b> — device picker, .vcf import, or by hand</li>
+      <li><b>Search messages</b> — full-text across every conversation</li>
+      <li><b>Run loopback demo</b> — proves the loop end to end; try this first</li>
+      <li><b>Check inboxes now</b> / <b>Delete old messages now</b></li>
+    </ul>
+    <p>The composer's clock button marks the next send to self-destruct: <b>1 hour / 1 day / 1 week</b> after sending, or <b>1 hour / 1 day after reading</b>. Burned messages vanish from every view — thread, previews, search, export — and a sweep deletes them from the mailbox files. Best effort by design: a participant that never implements burning keeps its copy until ordinary retention takes it.</p>
+  </div>
+
+  <div class="sec" id="security">
+    <h2>Security, in brief</h2>
+    <p>Your passcode unlocks a key that seals the mailbox on disk (Argon2id for new vaults, legacy PBKDF2 vaults upgrade silently on first unlock). Cross-vault identities exist in memory only while the messenger is unlocked — stealing the vault never yields the signing key.</p>
+    <p>Straight talk about the limits: the lock is a privacy screen, and encryption protects files at rest — but anything running inside Obsidian reads mail through the API once unlocked, and the passcode can't stop the OS user themselves. For the outer layer, use your device's own lock: Obsidian mobile's app lock, biometrics, a screen password. <a href="/spec.md">The spec's trust-model section</a> doesn't skip this; neither do we.</p>
+  </div>
+
+  <div class="sec" id="deeper">
+    <h2>Go deeper</h2>
+    <ul>
+      <li><a href="/spec.md">The full protocol spec</a> — OM-1 transport, OM-2 sealed mail, trust model, all of it</li>
+      <li><a href="https://github.com/JordanNewell/interleaf" rel="noopener">Source on GitHub</a> — issues and discussions live there</li>
+      <li><a href="mailto:info@interleaf.dev">info@interleaf.dev</a> — for everything else</li>
+    </ul>
+  </div>
+
+  <footer>© 2026 <a href="/">interleaf.dev</a></footer>
+</div>
+</body>
+</html>
