@@ -199,7 +199,7 @@
   <div class="entry">
     <h2>October 15, 2026</h2>
     <ul>
-      <li><b>Named.</b> The plugin is now called Interleaf everywhere — docs, UI strings, self-identification on the wire. The plugin id stays <b>message-bus</b> for now so existing installs keep updating.</li>
+      <li><b>Named.</b> The plugin is now called Interleaf everywhere — docs, UI strings, self-identification on the wire, and the plugin id, which is now <b>interleaf</b>. Existing installs update by re-adding the plugin (BRAT fetches it automatically) and removing the old <code>message-bus</code> folder.</li>
       <li><b>Argon2id.</b> New sealed notes derive keys with Argon2id instead of PBKDF2. Older notes still open exactly as before.</li>
       <li><b>Icons.</b> Full favicon and app-icon set across the site.</li>
       <li><b>255 unit tests</b> passing.</li>
