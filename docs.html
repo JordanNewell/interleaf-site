@@ -103,15 +103,18 @@
   footer a:hover { color: var(--accent); }
   @media (max-width: 640px) {
     h1 { font-size: 36px; }
-    .wrap { padding: 64px 24px 96px; }
+    .site-menu { top: 24px; right: 24px; }
+    .wrap { padding: 380px 24px 96px; }
   }
 
   .site-menu {
+    position: absolute;
+    top: 12px;
+    right: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 14px;
-    margin-bottom: 72px;
   }
   .site-menu .menu-mark {
     width: 120px;
