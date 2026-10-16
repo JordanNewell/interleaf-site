@@ -26,6 +26,7 @@
     --text: #E9E5FF;
     --accent: #A78BFA;
     --muted: #9A93B8;
+    --line: rgba(167, 139, 250, 0.25);
   }
   [data-theme="light"] {
     --bg: #F4F1FB;
@@ -33,6 +34,7 @@
     --text: #211C38;
     --accent: #6B4EE0;
     --muted: #5E5779;
+    --line: rgba(107, 78, 224, 0.25);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -48,15 +50,6 @@
     margin: 0 auto;
     padding: 96px 32px 128px;
   }
-  .back {
-    display: inline-block;
-    margin-bottom: 48px;
-    font-size: 14px;
-    color: var(--muted);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(167, 139, 250, 0.4);
-  }
-  .back:hover { color: var(--accent); }
   h1 {
     font-size: 48px;
     font-weight: 600;
@@ -97,6 +90,7 @@
     background: var(--surface);
     padding: 2px 7px;
     border-radius: 6px;
+    overflow-wrap: anywhere;
   }
   a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(167, 139, 250, 0.4); }
   a:hover { color: var(--text); }
@@ -111,11 +105,85 @@
     h1 { font-size: 36px; }
     .wrap { padding: 64px 24px 96px; }
   }
+
+  .site-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 72px;
+  }
+  .site-menu .menu-mark {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin-bottom: -7px;
+  }
+  .menu-pills { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    padding: 0 14px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+  .chip:hover { border-color: var(--accent); color: var(--text); }
+  .chip.current { color: var(--text); border-color: rgba(167, 139, 250, 0.45); }
+  .top-links { display: flex; align-items: center; gap: 12px; }
+  .round-link {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line);
+    border-radius: 9999px;
+    color: var(--muted);
+    padding: 0;
+    text-decoration: none;
+  }
+  .round-link svg { width: 13px; height: 13px; display: block; fill: currentColor; }
+  .round-link:hover { border-color: var(--accent); color: var(--text); }
+  .round-link .copy-mark { font-size: 14px; line-height: 1; }
+  .home-link {
+    position: fixed;
+    bottom: 28px;
+    right: 32px;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .home-link:hover { color: var(--accent); border-bottom-color: rgba(167, 139, 250, 0.4); }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <a class="back" href="/">&larr; interleaf.dev</a>
+  <header class="site-menu">
+    <a href="/" aria-label="Interleaf home"><img src="/interleaf-badge.svg" alt="Interleaf" class="menu-mark"></a>
+    <nav class="menu-pills">
+      <a class="chip current" href="/docs.html">Docs</a>
+      <a class="chip" href="/changelog.html">Changelog</a>
+    </nav>
+    <div class="top-links">
+      <a class="round-link" href="https://x.com/interleafdev" aria-label="Interleaf on X" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a class="round-link" href="/license.html" aria-label="Copyright and license"><span class="copy-mark">&copy;</span></a>
+      <a class="round-link" href="mailto:info@interleaf.dev" aria-label="Email Interleaf">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </a>
+    </div>
+  </header>
   <h1>Docs</h1>
   <p class="lede">Sealed mail between Obsidian vaults. Everything below lives in one plugin — install it, pick a name, set a passcode, and talk.</p>
 
@@ -185,5 +253,6 @@
 
   <footer>© 2026 <a href="/">interleaf.dev</a></footer>
 </div>
+  <a class="home-link" href="/">Home</a>
 </body>
 </html>
