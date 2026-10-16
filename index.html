@@ -70,12 +70,10 @@
     align-items: center;
     gap: 14px;
   }
-  .changelog-chip {
+  .chip {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    top: -5px;
     height: 32px;
     padding: 0 14px;
     border: 1px solid var(--line);
@@ -86,7 +84,7 @@
     letter-spacing: 0.02em;
     white-space: nowrap;
   }
-  .changelog-chip:hover { border-color: var(--accent); color: var(--text); }
+  .chip:hover { border-color: var(--accent); color: var(--text); }
   .top-links {
     display: flex;
     align-items: center;
@@ -355,7 +353,8 @@
 <body>
 <div class="top-right">
   <img src="/interleaf-badge.svg" alt="Interleaf mark" class="corner-mark">
-  <a class="changelog-chip" href="/changelog.html">Changelog</a>
+  <a class="chip" href="/docs.html">Docs</a>
+  <a class="chip" href="/changelog.html">Changelog</a>
   <div class="top-links">
     <a class="round-link" href="https://x.com/interleafdev" aria-label="Interleaf on X" rel="noopener">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
