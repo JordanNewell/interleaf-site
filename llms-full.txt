@@ -1,0 +1,77 @@
+# Interleaf — full context
+
+Interleaf (https://interleaf.dev) is sealed mail between Obsidian vaults: encrypted, verifiable messages that live on your devices. It ships as an Obsidian plugin and is currently in development. Author: Jordan Newell (https://jordannewell.com). Contact: info@interleaf.dev. Social: https://x.com/interleafdev.
+
+## The pitch
+
+Your notes already live on your devices — your mail should too. Interleaf turns any vault into a mail endpoint: every message sealed to the recipient's key before it leaves, every signature checked against a pinned identity. Only the two vaults ever hold the key.
+
+## How it works
+
+1. Verification is native. Every message carries a signature checked against a pinned key. Key changes are loud, not silent.
+2. No accounts, no directory. First contact happens out-of-band through invite codes — the invite is the address. Strangers knock into a quarantine you review.
+3. Relays can't read. The relay is a dumb per-fingerprint mailbox of opaque boxes. It sees routing metadata and ciphertext. That's all.
+
+A message travels: sender vault → sealed box → opaque relay → sealed box → recipient vault.
+
+## Security, concretely
+
+- Ed25519 keypair identity. Your address out there is a fingerprint; the seed is wrapped at rest and only exists in memory while unlocked.
+- NaCl sealed boxes. Every message signed with your key and encrypted to the recipient's before it leaves.
+- AES-256-GCM at rest. Message bodies sealed in the vault; Argon2id (memory-hard) wraps the vault key.
+- First contact is a knock. Strangers land in a quarantine you review — never straight into your inbox.
+- Key-change detection. A pinned contact announcing a new key is loud, not silent.
+- Safety numbers. Compare 30 digits out-of-band when identity matters.
+- Invite codes, QR, deep links. No directory to type an address into — the invite is the address.
+- No custom crypto. tweetnacl, @noble/hashes, and WebCrypto — all public, audited primitives.
+
+## Honest limits
+
+- Relay metadata is stated, not solved. The relay sees destination fingerprint, size, and timing for mail in flight — and stores only opaque ciphertext.
+- No ratchet, on purpose. Sealed boxes are static — no forward secrecy against a later long-term-key theft. The right bet for archival mail; Signal-style ratchets optimize a different threat.
+- First contact trusts the invite. Key pinning is TOFU: an intercepted first invite could swap keys. Quarantine plus a 30-second safety-number comparison closes that window.
+- Receipts never cross vaults. Remote conversations show no delivery or read receipts, by design.
+- A signature proves key possession, not personhood. Compare safety numbers out-of-band when it matters.
+- Relay retention is the outer bound. Mail in flight expires after 7 days; the relay must be up to receive it.
+
+## Platform
+
+- Ships as an Obsidian plugin. License: BUSL-1.1, converting to GPL v3 (https://interleaf.dev/license.html).
+- Protocol fully specified: OM-1 and OM-2 (https://interleaf.dev/spec.md).
+- 255 unit tests, all green.
+- Every conversation is human-readable markdown on disk — open the folder with any file manager and read it.
+
+## Getting started
+
+Install instructions: https://interleaf.dev/docs.html
+
+## Changelog
+
+- October 15, 2026 — Named: the plugin is now called Interleaf everywhere (docs, UI strings, wire self-identification, plugin id "interleaf"). Argon2id replaces PBKDF2 for new sealed notes (older notes open as before). Full favicon and app-icon set. 255 unit tests passing.
+- October 14, 2026 — interleaf.dev live. Spec published (OM-1 + OM-2 at /spec.md). License: BUSL-1.1 converting to GPL v3. info@interleaf.dev live — DKIM signed, DMARC p=reject, MTA-STS.
+
+## FAQ
+
+**What is Interleaf?**
+End-to-end encrypted mail between Obsidian vaults, shipped as an Obsidian plugin. Messages are signed and sealed to the recipient's key before they leave your device.
+
+**How is Interleaf different from email?**
+Email is plaintext with optional encryption bolted on. Interleaf seals every message end to end by default, has no accounts or directory, and relays store opaque ciphertext they cannot read.
+
+**Can the relay read my messages?**
+No. The relay is a dumb per-fingerprint mailbox of opaque boxes. It sees routing metadata (destination fingerprint, size, timing) and ciphertext — nothing else — and mail in flight expires after 7 days.
+
+**Does Interleaf need an account or a server?**
+No accounts, no directory. Your address is your key fingerprint, and first contact happens out-of-band through invite codes.
+
+**Is Interleaf end-to-end encrypted?**
+Yes. NaCl sealed boxes: each message is signed with your Ed25519 key and encrypted to the recipient's key. At rest, bodies are AES-256-GCM with the vault key wrapped by Argon2id.
+
+**Does Interleaf have forward secrecy?**
+No ratchet, on purpose. Sealed boxes are static, so there is no forward secrecy against later long-term-key theft — a deliberate trade for archival mail.
+
+**What platforms does Interleaf run on?**
+It ships as an Obsidian plugin wherever Obsidian runs.
+
+**Is Interleaf free?**
+It is in development, licensed BUSL-1.1, converting to GPL v3.

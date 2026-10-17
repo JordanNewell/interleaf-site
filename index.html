@@ -5,12 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Interleaf — sealed mail for Obsidian vaults</title>
 <meta name="description" content="Encrypted, verifiable mail between Obsidian vaults. Ed25519 identities, sealed boxes end to end, no accounts, relays that can't read.">
-<meta property="og:title" content="Interleaf">
+<link rel="canonical" href="https://interleaf.dev/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Interleaf">
+<meta property="og:title" content="Interleaf — sealed mail for Obsidian vaults">
 <meta property="og:description" content="Sealed mail between Obsidian vaults. Only the two vaults ever hold the key.">
-<meta property="og:url" content="https://interleaf.dev">
+<meta property="og:url" content="https://interleaf.dev/">
 <meta property="og:image" content="https://interleaf.dev/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Interleaf — sealed mail between Obsidian vaults">
+<meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Interleaf — sealed mail for Obsidian vaults">
+<meta name="twitter:description" content="Encrypted, verifiable mail between Obsidian vaults. No accounts. Relays that can't read.">
 <meta name="twitter:image" content="https://interleaf.dev/og.png">
+<meta name="twitter:image:alt" content="Interleaf — sealed mail between Obsidian vaults">
+<meta name="theme-color" content="#1C1830">
+<meta name="theme-color" content="#F4F1FB" media="(prefers-color-scheme: light)">
+<link rel="alternate" type="application/atom+xml" title="Interleaf changelog" href="/feed.xml">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16.png">
@@ -259,6 +273,15 @@
   .limits {
     margin-top: 88px;
   }
+  .faq {
+    margin-top: 88px;
+  }
+  .faq a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line-hot);
+  }
+  .faq a:hover { color: var(--text); }
   .limits ul {
     list-style: none;
     
@@ -350,6 +373,98 @@
     .newell-logo { height: 24px; }
   }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://interleaf.dev/#website",
+      "url": "https://interleaf.dev/",
+      "name": "Interleaf",
+      "description": "Sealed mail between Obsidian vaults. Encrypted, verifiable, accountless.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://interleaf.dev/#org" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://interleaf.dev/#org",
+      "name": "Interleaf",
+      "url": "https://interleaf.dev/",
+      "logo": "https://interleaf.dev/interleaf-badge.svg",
+      "email": "info@interleaf.dev",
+      "founder": {
+        "@type": "Person",
+        "name": "Jordan Newell",
+        "url": "https://jordannewell.com"
+      },
+      "sameAs": ["https://x.com/interleafdev"]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://interleaf.dev/#app",
+      "name": "Interleaf",
+      "applicationCategory": "CommunicationApplication",
+      "operatingSystem": "Obsidian (cross-platform)",
+      "url": "https://interleaf.dev/",
+      "description": "Sealed mail between Obsidian vaults. Every message signed with Ed25519 and encrypted in a NaCl sealed box before it leaves; no accounts, no directory, relays that can't read.",
+      "featureList": "End-to-end encryption, Ed25519 identities, NaCl sealed boxes, AES-256-GCM at rest, Argon2id key wrapping, invite-code contacts, key pinning, quarantine for strangers, safety numbers, markdown-native conversations",
+      "softwareVersion": "in development",
+      "isAccessibleForFree": true,
+      "license": "https://interleaf.dev/license.html",
+      "author": { "@type": "Person", "name": "Jordan Newell", "url": "https://jordannewell.com" },
+      "publisher": { "@id": "https://interleaf.dev/#org" },
+      "screenshot": "https://interleaf.dev/shots/compose.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://interleaf.dev/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Interleaf?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Interleaf is end-to-end encrypted mail between Obsidian vaults, shipped as an Obsidian plugin. Messages are signed with the sender's Ed25519 key and sealed to the recipient's key before they leave the device." }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Interleaf different from email?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Email is plaintext with optional encryption bolted on. Interleaf seals every message end to end by default, has no accounts or directory, and relays store opaque ciphertext they cannot read." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the relay read my messages?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The relay is a dumb per-fingerprint mailbox of opaque boxes. It sees routing metadata — destination fingerprint, size, timing — and ciphertext, nothing else. Mail in flight expires after 7 days." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Interleaf need an account or a server?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No accounts, no directory. Your address is your key fingerprint, and first contact happens out-of-band through invite codes — the invite is the address." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Interleaf end-to-end encrypted?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every message is a NaCl sealed box: signed with your Ed25519 key, encrypted to the recipient's. At rest, bodies are AES-256-GCM with the vault key wrapped by Argon2id." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Interleaf have forward secrecy?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No ratchet, on purpose. Sealed boxes are static, so there is no forward secrecy against a later long-term-key theft — a deliberate trade for archival mail." }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does Interleaf run?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It ships as an Obsidian plugin, so it runs wherever Obsidian runs. Every conversation is human-readable markdown on disk." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Interleaf free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It is in development, licensed BUSL-1.1, converting to GPL v3." }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="top-right">
@@ -410,11 +525,11 @@
   <div class="shots">
     <h2>It exists — here it is running</h2>
     <div class="shots-row">
-      <img src="/shots/chat-list.jpg" alt="Chat list — conversations in the vault">
-      <img src="/shots/compose.jpg" alt="Compose — sealing a message">
-      <img src="/shots/thread.jpg" alt="Thread — a conversation, markdown on disk">
-      <img src="/shots/sent.jpg" alt="Sent — outgoing mail">
-      <img src="/shots/notifications.jpg" alt="Notifications">
+      <img src="/shots/chat-list.jpg" alt="Chat list — conversations in the vault" width="600" height="1335" loading="lazy" decoding="async">
+      <img src="/shots/compose.jpg" alt="Compose — sealing a message" width="600" height="1335" loading="lazy" decoding="async">
+      <img src="/shots/thread.jpg" alt="Thread — a conversation, markdown on disk" width="600" height="1335" loading="lazy" decoding="async">
+      <img src="/shots/sent.jpg" alt="Sent — outgoing mail" width="600" height="1335" loading="lazy" decoding="async">
+      <img src="/shots/notifications.jpg" alt="Notifications" width="600" height="1335" loading="lazy" decoding="async">
     </div>
     <p>Real screenshots from a phone vault. Every conversation is human-readable
     markdown on disk — open the folder with any file manager and read it.</p>
@@ -446,6 +561,19 @@
       <li><b>Relay retention is the outer bound.</b> Mail in flight expires after 7 days; the relay must be up to receive it.</li>
     </ul>
     <p class="speclink"><a href="/docs.html">Read the docs</a> &nbsp;&middot;&nbsp; <a href="/spec.md">the full protocol spec &rarr;</a></p>
+  </div>
+  <div class="faq">
+    <h2>Questions, answered</h2>
+    <div class="sec-grid">
+      <div class="sec-item"><span class="dot">·</span><p><b>What is Interleaf?</b> End-to-end encrypted mail between Obsidian vaults, shipped as an Obsidian plugin. Messages are sealed to the recipient's key before they leave the device.</p></div>
+      <div class="sec-item"><span class="dot">·</span><p><b>How is it different from email?</b> Email is plaintext with encryption bolted on. Interleaf seals everything by default, has no accounts or directory, and relays store ciphertext they can't read.</p></div>
+      <div class="sec-item"><span class="dot">·</span><p><b>Can the relay read my messages?</b> No. It's a dumb per-fingerprint mailbox of opaque boxes — routing metadata and ciphertext, nothing else. Mail in flight expires after 7 days.</p></div>
+      <div class="sec-item"><span class="dot">·</span><p><b>Does it need an account or server?</b> No. Your address is your key fingerprint; first contact happens out-of-band through invite codes — the invite is the address.</p></div>
+      <div class="sec-item"><span class="dot">·</span><p><b>Is it end-to-end encrypted?</b> Yes. NaCl sealed boxes: signed with your Ed25519 key, encrypted to the recipient's. At rest, AES-256-GCM with the vault key wrapped by Argon2id.</p></div>
+      <div class="sec-item"><span class="dot">·</span><p><b>Does it have forward secrecy?</b> No ratchet, on purpose. Sealed boxes are static — a deliberate trade for archival mail, not an oversight.</p></div>
+      <div class="sec-item"><span class="dot">·</span><p><b>Where does it run?</b> Wherever Obsidian runs. Every conversation is human-readable markdown on disk — open the folder and read it.</p></div>
+      <div class="sec-item"><span class="dot">·</span><p><b>Is it free?</b> In development, licensed BUSL-1.1, converting to GPL v3. Details on the <a href="/license.html">license page</a>.</p></div>
+    </div>
   </div>
   <div class="status"><b>In development</b> — ships as an Obsidian plugin. BUSL-1.1.</div>
 </div>

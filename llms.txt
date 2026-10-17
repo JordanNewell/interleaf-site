@@ -1,0 +1,23 @@
+# Interleaf
+
+> Sealed mail between Obsidian vaults. Encrypted, verifiable messages that live on your devices — Ed25519 identities, NaCl sealed boxes end to end, no accounts, relays that can't read. Ships as an Obsidian plugin. BUSL-1.1.
+
+Interleaf turns any Obsidian vault into a mail endpoint. Every message is signed with the sender's key and encrypted to the recipient's key before it leaves; relays store only opaque ciphertext. Identity is a key fingerprint, first contact happens out-of-band through invite codes, and strangers land in a quarantine. There is no directory, no account, and no server that can read your mail. Protocol is fully specified as OM-1 and OM-2; 255 unit tests green; in development.
+
+## Pages
+
+- [Home](https://interleaf.dev/): Product overview — how it works, security model, honest limits.
+- [Docs](https://interleaf.dev/docs.html): Install, first run, contacts, cross-vault mail, security in brief.
+- [Protocol spec](https://interleaf.dev/spec.md): The full OM-1 and OM-2 protocol specification.
+- [Changelog](https://interleaf.dev/changelog.html): What's new, with dates.
+- [License](https://interleaf.dev/license.html): BUSL-1.1, converting to GPL v3.
+- [Machine-readable feed](https://interleaf.dev/feed.xml): Atom feed of the changelog.
+
+## Key facts
+
+- **What it is**: end-to-end encrypted mail between Obsidian vaults, as an Obsidian plugin.
+- **Crypto**: Ed25519 identities, NaCl sealed boxes (per-message encryption + signature), AES-256-GCM at rest, Argon2id key wrapping. No custom crypto — tweetnacl, @noble/hashes, WebCrypto.
+- **Privacy**: relays can't read; they see routing metadata and ciphertext only, retention 7 days max, messages in flight only.
+- **No accounts**: your address is a fingerprint; the invite is the address.
+- **Honest limits**: no forward-secrecy ratchet (deliberate, archival design); relay metadata is stated, not solved; TOFU first contact closed by quarantine + safety numbers.
+- **Status**: in development; author Jordan Newell (https://jordannewell.com); contact info@interleaf.dev; social https://x.com/interleafdev.

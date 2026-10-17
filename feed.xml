@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Interleaf — Changelog</title>
+  <subtitle>Sealed mail between Obsidian vaults.</subtitle>
+  <link rel="self" href="https://interleaf.dev/feed.xml"/>
+  <link href="https://interleaf.dev/changelog.html"/>
+  <id>https://interleaf.dev/feed.xml</id>
+  <updated>2026-10-15T00:00:00Z</updated>
+  <author>
+    <name>Jordan Newell</name>
+    <email>info@interleaf.dev</email>
+    <uri>https://jordannewell.com</uri>
+  </author>
+  <entry>
+    <title>October 15, 2026 — Named, Argon2id, icon set</title>
+    <link href="https://interleaf.dev/changelog.html"/>
+    <id>https://interleaf.dev/changelog.html#2026-10-15</id>
+    <updated>2026-10-15T00:00:00Z</updated>
+    <summary>The plugin is now called Interleaf everywhere. New sealed notes derive keys with Argon2id instead of PBKDF2. Full favicon and app-icon set. 255 unit tests passing.</summary>
+    <content type="html">&lt;p&gt;&lt;b&gt;Named.&lt;/b&gt; The plugin is now called Interleaf everywhere — docs, UI strings, self-identification on the wire, and the plugin id, which is now &lt;b&gt;interleaf&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Argon2id.&lt;/b&gt; New sealed notes derive keys with Argon2id instead of PBKDF2. Older notes still open exactly as before.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Icons.&lt;/b&gt; Full favicon and app-icon set across the site.&lt;/p&gt;&lt;p&gt;&lt;b&gt;255 unit tests&lt;/b&gt; passing.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>October 14, 2026 — interleaf.dev live, spec published</title>
+    <link href="https://interleaf.dev/changelog.html"/>
+    <id>https://interleaf.dev/changelog.html#2026-10-14</id>
+    <updated>2026-10-14T00:00:00Z</updated>
+    <summary>interleaf.dev is live. OM-1 and OM-2 protocol spec published. License: BUSL-1.1 converting to GPL v3. info@interleaf.dev live — DKIM signed, DMARC p=reject, MTA-STS.</summary>
+    <content type="html">&lt;p&gt;&lt;b&gt;interleaf.dev is live.&lt;/b&gt; Registered and shipped the same day.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Spec published&lt;/b&gt; — the OM-1 and OM-2 protocol documents, readable at /spec.md.&lt;/p&gt;&lt;p&gt;&lt;b&gt;License&lt;/b&gt; — Business Source License 1.1, converting to GPL v3.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Mail.&lt;/b&gt; info@interleaf.dev is live — DKIM signed, DMARC p=reject, MTA-STS.&lt;/p&gt;</content>
+  </entry>
+</feed>

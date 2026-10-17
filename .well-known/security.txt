@@ -1,0 +1,4 @@
+Contact: mailto:info@interleaf.dev
+Expires: 2027-10-17T00:00:00.000Z
+Canonical: https://interleaf.dev/.well-known/security.txt
+Preferred-Languages: en
